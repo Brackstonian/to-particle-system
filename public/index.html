@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Three.js Particle Orb</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+    canvas {
+      display: block;
+    }
+    /* UI container on the right side */
+    #ui-container {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 4px;
+      color: #fff;
+    }
+    .button-container {
+      margin-bottom: 10px;
+    }
+    .button {
+      width: 100%;
+      background: #333;
+      border: none;
+      padding: 8px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .slider {
+      display: none;
+      width: 100%;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- UI Container -->
+  <div id="ui-container">
+    <!-- Smell Buttons -->
+    <div class="button-container">
+      <button class="button" data-target="smell-fruity">Smell Fruity</button>
+      <input type="range" class="slider" id="smell-fruity" min="1" max="8" value="1" />
+    </div>
+    <div class="button-container">
+      <button class="button" data-target="smell-sweet">Smell Sweet</button>
+      <input type="range" class="slider" id="smell-sweet" min="1" max="8" value="1" />
+    </div>
+    <div class="button-container">
+      <button class="button" data-target="smell-spicy">Smell Spicy</button>
+      <input type="range" class="slider" id="smell-spicy" min="1" max="8" value="1" />
+    </div>
+    <div class="button-container">
+      <button class="button" data-target="smell-smokey">Smell Smokey</button>
+      <input type="range" class="slider" id="smell-smokey" min="1" max="8" value="1" />
+    </div>
+    <!-- Taste Buttons -->
+    <div class="button-container">
+      <button class="button" data-target="taste-fruity">Taste Fruity</button>
+      <input type="range" class="slider" id="taste-fruity" min="1" max="8" value="1" />
+    </div>
+    <div class="button-container">
+      <button class="button" data-target="taste-sweet">Taste Sweet</button>
+      <input type="range" class="slider" id="taste-sweet" min="1" max="8" value="1" />
+    </div>
+    <div class="button-container">
+      <button class="button" data-target="taste-spicy">Taste Spicy</button>
+      <input type="range" class="slider" id="taste-spicy" min="1" max="8" value="1" />
+    </div>
+    <div class="button-container">
+      <button class="button" data-target="taste-smokey">Taste Smokey</button>
+      <input type="range" class="slider" id="taste-smokey" min="1" max="8" value="1" />
+    </div>
+  </div>
+
+  <!-- Webpack will inject our code via the bundle.js output -->
+  <script src="/bundle.js"></script>
+  <script>
+    // Add click listeners to toggle the slider visibility
+    document.querySelectorAll('#ui-container .button').forEach(button => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const slider = document.getElementById(targetId);
+        // Toggle slider display between block and none
+        slider.style.display = (slider.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
