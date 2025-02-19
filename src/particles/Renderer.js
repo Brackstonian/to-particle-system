@@ -24,7 +24,7 @@ export default class Renderer {
             0.1,
             2000
         );
-        this.camera.position.z = 8.5;
+        this.camera.position.z = 10.5;
         this.camera.enableDamping = true;
         this.targetCameraPosition = this.camera.position.clone();
 

@@ -9,9 +9,9 @@ export default class ParticleSystem {
 
         this.initialOrbSettings = {
             curlSize: 0.5,
-            speed: 1.0,
-            radius: 2,
-            attraction: 1.035,
+            speed: 3.0,
+            radius: 2.0,
+            attraction: 0.035,
             color: 0xfff307,
             particleCount: 3000,
             bloomStrength: 0.1,
@@ -108,6 +108,7 @@ export default class ParticleSystem {
         // Update controls and render the scene.
         this.controls.update();
         this.rendererInstance.render();
+
 
         this.animationId = requestAnimationFrame(this.animate);
     }

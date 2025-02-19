@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let baseBloomStrength = 0.1; // initial particle count
     let baseCurlSize = 0.5; // initial particle count
     let baseMotionBlurDamp = 0.15;
-    let baseSpeed = 0.5;
+    let baseSpeed = 3;
 
     // Store cumulative slider values for each flavor.
     // This lets each flavor remember its last slider value.

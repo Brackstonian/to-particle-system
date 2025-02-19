@@ -26,7 +26,7 @@ export default class ParticleManager {
 
         // Create a PointsMaterial.
         this.particleMaterial = new THREE.PointsMaterial({
-            size: 0.08,
+            size: 0.12,
             transparent: true,
             opacity: 1,
             depthWrite: false,
@@ -85,8 +85,6 @@ export default class ParticleManager {
     updateParticles(deltaTime, currentColor, camera) {
         const { attraction, curlSize, speed, swirlForce } = this.orbSettings;
         const time = performance.now() * 0.001;
-        // Comment out the reset distance condition to let particles continue their motion.
-        // const resetDistance = 0.3;
 
         for (let i = 0; i < this.allParticles.length; i++) {
             const particle = this.allParticles[i];
@@ -127,10 +125,10 @@ export default class ParticleManager {
             particle.vz *= 0.8;
 
             // Optionally, re-enable or adjust a reset condition if needed:
-            // const newDistance = Math.sqrt(particle.x ** 2 + particle.y ** 2 + particle.z ** 2);
-            // if (newDistance < 0.1) {
-            //     this.initParticle(particle, i);
-            // }
+            const newDistance = Math.sqrt(particle.x ** 2 + particle.y ** 2 + particle.z ** 2);
+            if (newDistance < 0.1) {
+                this.initParticle(particle, i);
+            }
 
             // Update positions array.
             const idx = i * 3;
