@@ -1,4 +1,7 @@
 {
+  "name": "to-particle-system",
+  "main": "src/particles/ParticleSystem.js",
+  "version": "0.2.3",
   "dependencies": {
     "babel-loader": "^9.2.1",
     "dat.gui": "^0.7.9",

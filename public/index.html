@@ -12,7 +12,13 @@
     canvas {
       display: block;
     }
-    /* UI container on the right side */
+    #screenshot {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+    }
     #ui-container {
       position: absolute;
       right: 10px;
@@ -34,6 +40,9 @@
       cursor: pointer;
       font-size: 14px;
     }
+    .button:hover {
+      opacity: 0.8;
+    }
     .slider {
       display: none;
       width: 100%;
@@ -42,44 +51,46 @@
   </style>
 </head>
 <body>
+  <div id="webgl-background"></div>
   <!-- UI Container -->
   <div id="ui-container">
     <!-- Smell Buttons -->
     <div class="button-container">
       <button class="button" data-target="smell-fruity">Smell Fruity</button>
-      <input type="range" class="slider" id="smell-fruity" min="1" max="8" value="1" />
+      <input type="range" class="slider" id="smell-fruity" min="0" max="8" value="0" />
     </div>
     <div class="button-container">
       <button class="button" data-target="smell-sweet">Smell Sweet</button>
-      <input type="range" class="slider" id="smell-sweet" min="1" max="8" value="1" />
+      <input type="range" class="slider" id="smell-sweet" min="0" max="8" value="0" />
     </div>
     <div class="button-container">
       <button class="button" data-target="smell-spicy">Smell Spicy</button>
-      <input type="range" class="slider" id="smell-spicy" min="1" max="8" value="1" />
+      <input type="range" class="slider" id="smell-spicy" min="0" max="8" value="0" />
     </div>
     <div class="button-container">
       <button class="button" data-target="smell-smokey">Smell Smokey</button>
-      <input type="range" class="slider" id="smell-smokey" min="1" max="8" value="1" />
+      <input type="range" class="slider" id="smell-smokey" min="0" max="8" value="0" />
     </div>
     <!-- Taste Buttons -->
     <div class="button-container">
       <button class="button" data-target="taste-fruity">Taste Fruity</button>
-      <input type="range" class="slider" id="taste-fruity" min="1" max="8" value="1" />
+      <input type="range" class="slider" id="taste-fruity" min="0" max="8" value="0" />
     </div>
     <div class="button-container">
       <button class="button" data-target="taste-sweet">Taste Sweet</button>
-      <input type="range" class="slider" id="taste-sweet" min="1" max="8" value="1" />
+      <input type="range" class="slider" id="taste-sweet" min="0" max="8" value="0" />
     </div>
     <div class="button-container">
       <button class="button" data-target="taste-spicy">Taste Spicy</button>
-      <input type="range" class="slider" id="taste-spicy" min="1" max="8" value="1" />
+      <input type="range" class="slider" id="taste-spicy" min="0" max="8" value="0" />
     </div>
     <div class="button-container">
       <button class="button" data-target="taste-smokey">Taste Smokey</button>
-      <input type="range" class="slider" id="taste-smokey" min="1" max="8" value="1" />
+      <input type="range" class="slider" id="taste-smokey" min="0" max="8" value="0" />
     </div>
   </div>
 
+  <button class="button" id="screenshot">Screenshot</button>
   <!-- Webpack will inject our code via the bundle.js output -->
   <script src="/bundle.js"></script>
   <script>

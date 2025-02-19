@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',            // "production" for minified builds
-  entry: './src/main.js',         // The entry point for your orb code
+  entry: ['./src/index.js'],         // The entry point for your orb code
   output: {
     filename: 'bundle.js',        // The output bundle file
     path: path.resolve(__dirname, 'dist'), // Output folder (will be created if it doesn’t exist)
