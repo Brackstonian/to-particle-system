@@ -13,7 +13,6 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'public'),
     },
-    port: 8089, // or any open port you prefer
     open: true  // automatically open the browser
   },
   module: {

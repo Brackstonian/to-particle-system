@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
@@ -34,12 +34,12 @@ export default class Renderer {
         this.container.appendChild(this.renderer.domElement);
 
         // Set up OrbitControls.
-        this.controls = new OrbitControls(
-            this.camera,
-            this.renderer.domElement
-        );
-        this.controls.enableDamping = true;
-        this.controls.dampingFactor = 0.05;
+        // this.controls = new OrbitControls(
+        //     this.camera,
+        //     this.renderer.domElement
+        // );
+        // this.controls.enableDamping = true;
+        // this.controls.dampingFactor = 0.05;
 
         // Add basic lighting.
         this.ambientLight = new THREE.AmbientLight(0xffffff, 0.4);

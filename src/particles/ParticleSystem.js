@@ -77,7 +77,7 @@ export default class ParticleSystem {
         this.scene = this.rendererInstance.scene;
         this.camera = this.rendererInstance.camera;
         this.composer = this.rendererInstance.composer;
-        this.controls = this.rendererInstance.controls;
+        // this.controls = this.rendererInstance.controls;
 
         // Initialize the ParticleManager (handles particles creation and update)
         this.particleManager = new ParticleManager({
@@ -106,7 +106,7 @@ export default class ParticleSystem {
         //     this.orbSettings.spinSpeed * deltaTime;
 
         // Update controls and render the scene.
-        this.controls.update();
+        // this.controls.update();
         this.rendererInstance.render();
 
 
@@ -152,6 +152,10 @@ export default class ParticleSystem {
         if (this.animationId) {
             cancelAnimationFrame(this.animationId);
             this.animationId = null;
+        }
+        const canvas = this.rendererInstance.renderer.domElement;
+        if (canvas && canvas.parentNode) {
+            canvas.remove();
         }
     }
 
